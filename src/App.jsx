@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './index.css';
+import logoImg from './assets/image.jpg';
 
-// Pure SVG Social Links - Zero External Dependency Issues
+// Link Cards Configuration with User's Exact Details
 const socialLinks = [
   {
     id: 'instagram',
     label: 'Instagram',
-    subtitle: 'Follow us',
+    subtitle: 'Follow us @velos.kids_',
     iconClass: 'icon-instagram',
-    url: 'https://instagram.com/ismart_mobiles',
+    url: 'https://www.instagram.com/velos.kids_?igsh=MW5jam5rZGh6b3AzZw%3D%3D&utm_source=qr',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -22,7 +23,7 @@ const socialLinks = [
     label: 'Google Review',
     subtitle: 'Review us',
     iconClass: 'icon-google',
-    url: 'https://g.page/r/ismart-review',
+    url: 'https://g.page/r/veloskids-review',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24">
         <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -35,9 +36,9 @@ const socialLinks = [
   {
     id: 'whatsapp',
     label: 'WhatsApp',
-    subtitle: 'Chat & save number',
+    subtitle: 'Chat & save number (+91 98476 69180)',
     iconClass: 'icon-whatsapp',
-    url: 'https://wa.me/919876543210?text=Hello%20iSmart!%20I%20want%20to%20inquire%20about%20your%20products.',
+    url: 'https://wa.me/919847669180?text=Hello%20Velos%20Kids!%20I%20want%20to%20inquire%20about%20your%20products.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
@@ -45,23 +46,23 @@ const socialLinks = [
     )
   },
   {
-    id: 'facebook',
-    label: 'Facebook',
-    subtitle: 'Connect with us',
-    iconClass: 'icon-facebook',
-    url: 'https://facebook.com/ismartstore',
+    id: 'phone-1',
+    label: 'Call Us (Primary)',
+    subtitle: '+91 98476 69180',
+    iconClass: 'icon-phone',
+    url: 'tel:+919847669180',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
       </svg>
     )
   },
   {
-    id: 'phone',
-    label: 'Call Us Directly',
-    subtitle: '+91 98765 43210',
+    id: 'phone-2',
+    label: 'Call Us (Secondary)',
+    subtitle: '+91 98956 69189',
     iconClass: 'icon-phone',
-    url: 'tel:+919876543210',
+    url: 'tel:+919895669189',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -97,8 +98,8 @@ export default function App() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'iSmart Mobiles Electronics Sports',
-          text: 'Official Contact & Bio-Link Page for iSmart Store',
+          title: 'Velos Kids',
+          text: 'Official Contact & Bio-Link Page for Velos Kids',
           url: window.location.href,
         });
       } catch (err) {
@@ -146,12 +147,12 @@ export default function App() {
         <div className="logo-outer-ring">
           <div className="logo-inner">
             <img 
-              src="/ismart_logo.png" 
-              alt="iSmart Logo" 
+              src={logoImg} 
+              alt="Velos Kids Wear Logo" 
               className="logo-img"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23000"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" fill="%23fff" font-family="sans-serif" font-weight="bold" font-size="16">iSmart</text><text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" fill="%23e52e2e" font-family="sans-serif" font-size="7">STORE</text></svg>';
+                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23000"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23fff" font-family="sans-serif" font-weight="bold" font-size="14">VELOS KIDS</text></svg>';
               }}
             />
           </div>
@@ -163,7 +164,7 @@ export default function App() {
         
         <div className="card-title-section">
           <h1 className="card-title">Contact Us</h1>
-          <p className="card-subtitle">Select any channel to get in touch with us</p>
+          <p className="card-subtitle">Select any channel to connect with Velos Kids</p>
         </div>
 
         {/* Links Container */}
@@ -194,10 +195,7 @@ export default function App() {
 
         {/* Footer */}
         <footer className="footer-text">
-          <div>Powered by <strong>iSmart Store</strong></div>
-          <div style={{ opacity: 0.65, fontSize: '0.75rem', marginTop: '2px' }}>
-            Mobiles • Electronics • Sports
-          </div>
+          <div>Powered by <strong>Velos Kids</strong></div>
         </footer>
 
       </main>
